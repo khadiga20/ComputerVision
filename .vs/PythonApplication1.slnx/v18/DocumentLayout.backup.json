@@ -1,0 +1,166 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Khadiga Yahia\\.kaggle\\PythonApplication1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C1C171A6-C973-4E7E-A92B-D6C6AB660525}|PythonApplication1\\PythonApplication1.pyproj|C:\\Users\\Khadiga Yahia\\.kaggle\\PythonApplication1\\PythonApplication1\\detect_video.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{C1C171A6-C973-4E7E-A92B-D6C6AB660525}|PythonApplication1\\PythonApplication1.pyproj|solutionrelative:PythonApplication1\\detect_video.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1C171A6-C973-4E7E-A92B-D6C6AB660525}|PythonApplication1\\PythonApplication1.pyproj|C:\\Users\\Khadiga Yahia\\.kaggle\\PythonApplication1\\PythonApplication1\\show_prediction.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{C1C171A6-C973-4E7E-A92B-D6C6AB660525}|PythonApplication1\\PythonApplication1.pyproj|solutionrelative:PythonApplication1\\show_prediction.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1C171A6-C973-4E7E-A92B-D6C6AB660525}|PythonApplication1\\PythonApplication1.pyproj|C:\\Users\\Khadiga Yahia\\.kaggle\\PythonApplication1\\PythonApplication1\\weapon_validate.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{C1C171A6-C973-4E7E-A92B-D6C6AB660525}|PythonApplication1\\PythonApplication1.pyproj|solutionrelative:PythonApplication1\\weapon_validate.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1C171A6-C973-4E7E-A92B-D6C6AB660525}|PythonApplication1\\PythonApplication1.pyproj|C:\\Users\\Khadiga Yahia\\.kaggle\\PythonApplication1\\PythonApplication1\\detect_weapon.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{C1C171A6-C973-4E7E-A92B-D6C6AB660525}|PythonApplication1\\PythonApplication1.pyproj|solutionrelative:PythonApplication1\\detect_weapon.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1C171A6-C973-4E7E-A92B-D6C6AB660525}|PythonApplication1\\PythonApplication1.pyproj|C:\\Users\\Khadiga Yahia\\.kaggle\\PythonApplication1\\PythonApplication1\\predict_weapons.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{C1C171A6-C973-4E7E-A92B-D6C6AB660525}|PythonApplication1\\PythonApplication1.pyproj|solutionrelative:PythonApplication1\\predict_weapons.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1C171A6-C973-4E7E-A92B-D6C6AB660525}|PythonApplication1\\PythonApplication1.pyproj|C:\\Users\\Khadiga Yahia\\.kaggle\\PythonApplication1\\PythonApplication1\\prepare_dataset.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{C1C171A6-C973-4E7E-A92B-D6C6AB660525}|PythonApplication1\\PythonApplication1.pyproj|solutionrelative:PythonApplication1\\prepare_dataset.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1C171A6-C973-4E7E-A92B-D6C6AB660525}|PythonApplication1\\PythonApplication1.pyproj|C:\\Users\\Khadiga Yahia\\.kaggle\\PythonApplication1\\PythonApplication1\\classes.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{C1C171A6-C973-4E7E-A92B-D6C6AB660525}|PythonApplication1\\PythonApplication1.pyproj|solutionrelative:PythonApplication1\\classes.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1C171A6-C973-4E7E-A92B-D6C6AB660525}|PythonApplication1\\PythonApplication1.pyproj|C:\\Users\\Khadiga Yahia\\.kaggle\\PythonApplication1\\PythonApplication1\\split_dataset.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{C1C171A6-C973-4E7E-A92B-D6C6AB660525}|PythonApplication1\\PythonApplication1.pyproj|solutionrelative:PythonApplication1\\split_dataset.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1C171A6-C973-4E7E-A92B-D6C6AB660525}|PythonApplication1\\PythonApplication1.pyproj|C:\\Users\\Khadiga Yahia\\.kaggle\\PythonApplication1\\PythonApplication1\\PythonApplication1.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{C1C171A6-C973-4E7E-A92B-D6C6AB660525}|PythonApplication1\\PythonApplication1.pyproj|solutionrelative:PythonApplication1\\PythonApplication1.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "show_prediction.py",
+              "DocumentMoniker": "C:\\Users\\Khadiga Yahia\\.kaggle\\PythonApplication1\\PythonApplication1\\show_prediction.py",
+              "RelativeDocumentMoniker": "PythonApplication1\\show_prediction.py",
+              "ToolTip": "C:\\Users\\Khadiga Yahia\\.kaggle\\PythonApplication1\\PythonApplication1\\show_prediction.py",
+              "RelativeToolTip": "PythonApplication1\\show_prediction.py",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAcwA8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-12-24T00:21:11.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "weapon_validate.py",
+              "DocumentMoniker": "C:\\Users\\Khadiga Yahia\\.kaggle\\PythonApplication1\\PythonApplication1\\weapon_validate.py",
+              "RelativeDocumentMoniker": "PythonApplication1\\weapon_validate.py",
+              "ToolTip": "C:\\Users\\Khadiga Yahia\\.kaggle\\PythonApplication1\\PythonApplication1\\weapon_validate.py",
+              "RelativeToolTip": "PythonApplication1\\weapon_validate.py",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAswBMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-12-24T00:17:48.725Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "predict_weapons.py",
+              "DocumentMoniker": "C:\\Users\\Khadiga Yahia\\.kaggle\\PythonApplication1\\PythonApplication1\\predict_weapons.py",
+              "RelativeDocumentMoniker": "PythonApplication1\\predict_weapons.py",
+              "ToolTip": "C:\\Users\\Khadiga Yahia\\.kaggle\\PythonApplication1\\PythonApplication1\\predict_weapons.py",
+              "RelativeToolTip": "PythonApplication1\\predict_weapons.py",
+              "ViewState": "AgIAACkAAAAAAAAAAAAswDUAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-12-23T23:37:26.071Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "detect_video.py",
+              "DocumentMoniker": "C:\\Users\\Khadiga Yahia\\.kaggle\\PythonApplication1\\PythonApplication1\\detect_video.py",
+              "RelativeDocumentMoniker": "PythonApplication1\\detect_video.py",
+              "ToolTip": "C:\\Users\\Khadiga Yahia\\.kaggle\\PythonApplication1\\PythonApplication1\\detect_video.py",
+              "RelativeToolTip": "PythonApplication1\\detect_video.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-12-23T23:29:16.4Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "detect_weapon.py",
+              "DocumentMoniker": "C:\\Users\\Khadiga Yahia\\.kaggle\\PythonApplication1\\PythonApplication1\\detect_weapon.py",
+              "RelativeDocumentMoniker": "PythonApplication1\\detect_weapon.py",
+              "ToolTip": "C:\\Users\\Khadiga Yahia\\.kaggle\\PythonApplication1\\PythonApplication1\\detect_weapon.py",
+              "RelativeToolTip": "PythonApplication1\\detect_weapon.py",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAswDgAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-12-23T23:26:21.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "classes.txt",
+              "DocumentMoniker": "C:\\Users\\Khadiga Yahia\\.kaggle\\PythonApplication1\\PythonApplication1\\classes.txt",
+              "RelativeDocumentMoniker": "PythonApplication1\\classes.txt",
+              "ToolTip": "C:\\Users\\Khadiga Yahia\\.kaggle\\PythonApplication1\\PythonApplication1\\classes.txt",
+              "RelativeToolTip": "PythonApplication1\\classes.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-12-23T22:34:40.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "split_dataset.py",
+              "DocumentMoniker": "C:\\Users\\Khadiga Yahia\\.kaggle\\PythonApplication1\\PythonApplication1\\split_dataset.py",
+              "RelativeDocumentMoniker": "PythonApplication1\\split_dataset.py",
+              "ToolTip": "C:\\Users\\Khadiga Yahia\\.kaggle\\PythonApplication1\\PythonApplication1\\split_dataset.py",
+              "RelativeToolTip": "PythonApplication1\\split_dataset.py",
+              "ViewState": "AgIAABsAAAAAAAAAAAAswCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-12-23T21:19:52.669Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "prepare_dataset.py",
+              "DocumentMoniker": "C:\\Users\\Khadiga Yahia\\.kaggle\\PythonApplication1\\PythonApplication1\\prepare_dataset.py",
+              "RelativeDocumentMoniker": "PythonApplication1\\prepare_dataset.py",
+              "ToolTip": "C:\\Users\\Khadiga Yahia\\.kaggle\\PythonApplication1\\PythonApplication1\\prepare_dataset.py",
+              "RelativeToolTip": "PythonApplication1\\prepare_dataset.py",
+              "ViewState": "AgIAABYAAAAAAAAAAAAswCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-12-23T21:08:14.781Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PythonApplication1.py",
+              "DocumentMoniker": "C:\\Users\\Khadiga Yahia\\.kaggle\\PythonApplication1\\PythonApplication1\\PythonApplication1.py",
+              "RelativeDocumentMoniker": "PythonApplication1\\PythonApplication1.py",
+              "ToolTip": "C:\\Users\\Khadiga Yahia\\.kaggle\\PythonApplication1\\PythonApplication1\\PythonApplication1.py",
+              "RelativeToolTip": "PythonApplication1\\PythonApplication1.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-12-23T20:32:10.67Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+cctv_weapon_data/
+*.zip
+__pycache__/
+*.pyc
