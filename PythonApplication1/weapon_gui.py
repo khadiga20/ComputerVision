@@ -3,140 +3,199 @@ import cv2
 from tkinter import *
 from tkinter import filedialog
 from PIL import Image, ImageTk
+import threading
 
 # ==============================
-# Load YOLO model
+# Custom Paths & Settings
 # ==============================
-model = YOLO(r"C:\Users\Khadiga Yahia\runs\detect\train9\weights\best.pt")
+MODEL_PATH = r"C:\Users\MEGA\Downloads\ComputerVision\runs\detect\train9\weights\best.pt"
+model = YOLO(MODEL_PATH)
+
+# ==============================
+# Color Palette
+# ==============================
+BG = "#000000"
+CARD = "#111111"
+TEXT = "#f0f0f0"
+ACCENT1 = "#3600b6"  
+ACCENT2 = "#b40101"  
+ACCENT3 = "#e9ff42"  
+ACCENT4 = "#170072"
+PANEL_WIDTH = 550
+PANEL_HEIGHT = 350
 
 # ==============================
 # Main Window
 # ==============================
 root = Tk()
-root.title("Weapon Detection System")
-
-BG_COLOR = "#0f172a"
-CARD_COLOR = "#1e293b"
-TEXT_COLOR = "#e5e7eb"
-ACCENT = "#38bdf8"
-
-root.configure(bg=BG_COLOR)
-root.geometry("1350x750")
+root.title("Advanced Weapon Detection System")
+root.geometry("1200x700")
+root.configure(bg=BG)
 
 # ==============================
-# Title
+# Fonts
 # ==============================
-title = Label(root,
-              text="🔫 Weapon Detection Using YOLO",
-              font=("Segoe UI", 22, "bold"),
-              bg=BG_COLOR,
-              fg=ACCENT)
-title.pack(pady=10)
-
-subtitle = Label(root,
-                 text="Original vs Detection Result",
-                 font=("Segoe UI", 11),
-                 bg=BG_COLOR,
-                 fg=TEXT_COLOR)
-subtitle.pack()
+TITLE_FONT = ("SF Pro Display", 24, "bold")
+SUBTITLE_FONT = ("SF Pro Display", 12, "bold")
+BUTTON_FONT = ("SF Pro Display", 14, "bold")
+CARD_TITLE_FONT = ("SF Pro Display", 14, "bold")
+LABEL_FONT = ("SF Pro Display", 10)
 
 # ==============================
-# Create scrolling area
+# Animated Title
 # ==============================
-main_frame = Frame(root, bg=BG_COLOR)
-main_frame.pack(fill=BOTH, expand=1)
+title_label = Label(root, text="🔫 ADVANCED WEAPON DETECTION",
+                    font=TITLE_FONT, bg=BG, fg=ACCENT1)
+title_label.pack(pady=5)
 
-canvas = Canvas(main_frame, bg=BG_COLOR, highlightthickness=0)
-canvas.pack(side=LEFT, fill=BOTH, expand=1)
+subtitle_label = Label(root, text="Detect weapons from Images or Videos in Real-Time",
+                       font=SUBTITLE_FONT, bg=BG, fg=TEXT)
+subtitle_label.pack(pady=(0, 10))
 
-scrollbar = Scrollbar(main_frame, orient=VERTICAL, command=canvas.yview)
-scrollbar.pack(side=RIGHT, fill=Y)
-
-canvas.configure(yscrollcommand=scrollbar.set)
-canvas.bind('<Configure>', lambda e: canvas.configure(scrollregion=canvas.bbox("all")))
-
-content_frame = Frame(canvas, bg=BG_COLOR)
-canvas.create_window((0, 0), window=content_frame, anchor="nw")
-
-# ==============================
-# Panels (cards)
-# ==============================
-left_frame = Frame(content_frame, bg=CARD_COLOR, bd=2, relief="ridge")
-left_frame.grid(row=0, column=0, padx=25, pady=10)
-
-right_frame = Frame(content_frame, bg=CARD_COLOR, bd=2, relief="ridge")
-right_frame.grid(row=0, column=1, padx=25, pady=10)
-
-Label(left_frame, text="Original Image", font=("Segoe UI", 12, "bold"),
-      bg=CARD_COLOR, fg=ACCENT).pack(pady=5)
-
-Label(right_frame, text="Detection Result", font=("Segoe UI", 12, "bold"),
-      bg=CARD_COLOR, fg="#4ade80").pack(pady=5)
-
-left_panel = Label(left_frame, bg=CARD_COLOR)
-left_panel.pack(padx=10, pady=10)
-
-right_panel = Label(right_frame, bg=CARD_COLOR)
-right_panel.pack(padx=10, pady=10)
+def animate_title(i=0):
+    colors = [ACCENT1, ACCENT2, ACCENT3, ACCENT4]
+    title_label.config(fg=colors[i % len(colors)])
+    root.after(1500, animate_title, i+1)
+animate_title()
 
 # ==============================
-# Image resize helper
+# Panels (Before / After)
 # ==============================
-def auto_resize(img, max_w=600, max_h=500):
+panel_frame = Frame(root, bg=BG)
+panel_frame.pack(fill=BOTH, expand=True, padx=10, pady=5)
+
+def create_card(parent, title, color):
+    card = Frame(parent, bg=CARD, bd=2, relief="ridge", width=PANEL_WIDTH, height=PANEL_HEIGHT+40)
+    card.pack(side=LEFT, padx=5, pady=5)
+    card.pack_propagate(False)  # Prevent auto resizing
+    card_title = Label(card, text=title, font=CARD_TITLE_FONT, bg=CARD, fg=color)
+    card_title.pack(pady=5)
+    panel = Label(card, bg="#1a1f2b", bd=2, relief="sunken", width=PANEL_WIDTH, height=PANEL_HEIGHT)
+    panel.pack()
+    return panel
+
+    return panel
+
+left_panel = create_card(panel_frame, "📷 ORIGINAL", ACCENT3)
+right_panel = create_card(panel_frame, "🎯 DETECTED", ACCENT2)
+
+# ==============================
+# Status Label
+# ==============================
+status_label = Label(root, text="Ready - Load an image or video", font=LABEL_FONT, bg=BG, fg=TEXT)
+status_label.pack(pady=5)
+
+# ==============================
+# Resize Helper
+# ==============================
+
+
+def resize_to_panel(img, panel):
     h, w = img.shape[:2]
-    scale = min(max_w / w, max_h / h)
-    new_w = int(w * scale)
-    new_h = int(h * scale)
-    return cv2.resize(img, (new_w, new_h))
+    scale = min(PANEL_WIDTH / w, PANEL_HEIGHT / h)
+    new_w, new_h = int(w*scale), int(h*scale)
+    return cv2.resize(img, (new_w, new_h), interpolation=cv2.INTER_LANCZOS4)
 
 
 # ==============================
-# Open + Detect Function
+# IMAGE & VIDEO DETECTION
 # ==============================
-def open_and_detect():
+video_cap = None
+video_running = False
 
+def detect_image(path):
+    global left_panel, right_panel
+    status_label.config(text="🔄 Processing Image...", fg=ACCENT1)
+    root.update_idletasks()
+    try:
+        img = cv2.imread(path)
+        resized = resize_to_panel(img, left_panel)
+        results = model.predict(img, conf=0.25, verbose=False)
+        detected = results[0].plot()
+        detected_resized = resize_to_panel(detected, right_panel)
+
+        # Original
+        orig_rgb = cv2.cvtColor(resized, cv2.COLOR_BGR2RGB)
+        orig_img = ImageTk.PhotoImage(Image.fromarray(orig_rgb))
+        left_panel.configure(image=orig_img)
+        left_panel.image = orig_img
+
+        # Detected
+        det_rgb = cv2.cvtColor(detected_resized, cv2.COLOR_BGR2RGB)
+        det_img = ImageTk.PhotoImage(Image.fromarray(det_rgb))
+        right_panel.configure(image=det_img)
+        right_panel.image = det_img
+
+        status_label.config(text=f"✅ Image Detection Complete | Objects: {len(results[0].boxes)}", fg=ACCENT3)
+    except Exception as e:
+        status_label.config(text="❌ Detection Failed", fg=ACCENT2)
+        print(e)
+
+def detect_video(path):
+    global video_cap, video_running
+    video_cap = cv2.VideoCapture(path)
+    video_running = True
+    status_label.config(text="🔄 Processing Video...", fg=ACCENT4)
+
+    while video_running:
+        ret, frame = video_cap.read()
+        if not ret:
+            status_label.config(text="✅ Video Finished", fg=ACCENT4)
+            video_cap.release()
+            video_running = False
+            break
+
+        results = model.predict(frame, conf=0.25, verbose=False)
+        detected_frame = results[0].plot()
+        detected_resized = resize_to_panel(detected_frame, right_panel)
+        orig_resized = resize_to_panel(frame, left_panel)
+
+        # Original frame
+        orig_rgb = cv2.cvtColor(orig_resized, cv2.COLOR_BGR2RGB)
+        orig_img = ImageTk.PhotoImage(Image.fromarray(orig_rgb))
+        left_panel.configure(image=orig_img)
+        left_panel.image = orig_img
+
+        # Detected frame
+        det_rgb = cv2.cvtColor(detected_resized, cv2.COLOR_BGR2RGB)
+        det_img = ImageTk.PhotoImage(Image.fromarray(det_rgb))
+        right_panel.configure(image=det_img)
+        right_panel.image = det_img
+
+        # Pause to allow GUI updates
+        cv2.waitKey(30)
+
+def detect_media():
+    global video_running, video_cap
     path = filedialog.askopenfilename(
-        filetypes=[("Image Files", "*.jpg *.jpeg *.png")]
+        filetypes=[("Image & Video Files", "*.jpg *.jpeg *.png *.mp4 *.avi *.mov *.mkv")]
     )
-
     if not path:
         return
 
-    original = cv2.imread(path)
+    # Stop any previous video
+    if video_running and video_cap is not None:
+        video_running = False
+        video_cap.release()
 
-    # Resize safely
-    original_resized = auto_resize(original)
-
-    # Run YOLO
-    results = model.predict(original, conf=0.25)
-    detected = results[0].plot()
-
-    detected_resized = auto_resize(detected)
-
-    # ---- Show original ----
-    orig_rgb = cv2.cvtColor(original_resized, cv2.COLOR_BGR2RGB)
-    orig_img = ImageTk.PhotoImage(Image.fromarray(orig_rgb))
-    left_panel.configure(image=orig_img)
-    left_panel.image = orig_img
-
-    # ---- Show detection ----
-    det_rgb = cv2.cvtColor(detected_resized, cv2.COLOR_BGR2RGB)
-    det_img = ImageTk.PhotoImage(Image.fromarray(det_rgb))
-    right_panel.configure(image=det_img)
-    right_panel.image = det_img
-
+    if path.lower().endswith(('.jpg', '.jpeg', '.png')):
+        detect_image(path)
+    else:
+        # Start video detection in a separate thread
+        threading.Thread(target=detect_video, args=(path,), daemon=True).start()
 
 # ==============================
-# Button
+# Buttons
 # ==============================
-btn = Button(root,
-             text="📂 Choose Image",
-             command=open_and_detect,
-             font=("Segoe UI", 14, "bold"),
-             bg="#0ea5e9",
-             fg="white",
-             relief="flat",
-             width=18)
-btn.pack(pady=10)
+button_frame = Frame(root, bg=BG)
+button_frame.pack(pady=5)
+
+def create_button(parent, text, color, command):
+    btn = Button(parent, text=text, command=command, font=BUTTON_FONT,
+                 bg=color, fg="white", relief="flat", width=25, cursor="hand2")
+    btn.pack(side=LEFT, padx=5)
+    return btn
+
+detect_btn = create_button(button_frame, "📂 Upload & Detect", ACCENT1, detect_media)
 
 root.mainloop()
